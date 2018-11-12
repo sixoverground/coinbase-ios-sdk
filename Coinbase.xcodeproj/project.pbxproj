@@ -1481,7 +1481,7 @@
 					};
 					EC38E8B32056A40200AFD71F = {
 						CreatedOnToolsVersion = 9.2;
-						LastSwiftMigration = 0920;
+						LastSwiftMigration = 1010;
 						ProvisioningStyle = Automatic;
 					};
 					EC38E8BC2056A40200AFD71F = {
@@ -2065,7 +2065,7 @@
 				PRODUCT_NAME = $TARGET_NAME;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -2087,7 +2087,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.coinbase.CoinbaseSDK;
 				PRODUCT_NAME = $TARGET_NAME;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
