@@ -54,6 +54,7 @@ internal struct OAuthURLBuilder {
                                  scope: [String]? = nil,
                                  state: String? = nil,
                                  accountAccess: AccountAccess? = nil,
+                                 referral: String? = nil,
                                  meta: [String: String]? = nil) -> URL? {
         var urlComponents = URLComponents()
 
@@ -82,6 +83,9 @@ internal struct OAuthURLBuilder {
         if let accountCurrency = accountAccess?.currency {
             queryItems.append(URLQueryItem(name: ParameterKeys.accountCurrency, value: accountCurrency))
         }
+        if let referral = referral {
+            queryItems.append(URLQueryItem(name: ParameterKeys.referral, value: referral))
+        }
         meta?.forEach {
             queryItems.append(URLQueryItem(name: "\(ParameterKeys.meta)[\($0)]", value: $1))
         }
@@ -103,6 +107,7 @@ internal struct OAuthURLBuilder {
         static let account = "account"
         static let accountCurrency = "account_currency"
         static let meta = "meta"
+        static let referral = "referral"
     }
     
     private struct ResponseTypes {

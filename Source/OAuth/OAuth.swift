@@ -215,6 +215,7 @@ open class OAuth {
                                     scope: [String]? = nil,
                                     state: String? = nil,
                                     accountAccess: AccountAccess? = nil,
+                                    referral: String? = nil,
                                     meta: [String: String]? = nil,
                                     urlOpener: URLOpenerProtocol) throws {
         guard let oauthKeys = oauthKeys else {
@@ -227,6 +228,7 @@ open class OAuth {
                                                                 scope: scope,
                                                                 state: self.state,
                                                                 accountAccess: accountAccess,
+                                                                referral: referral,
                                                                 meta: meta)
         
         guard let url = authorizationURL, urlOpener.canOpenURL(url) else {
@@ -322,12 +324,14 @@ extension OAuth {
                                    scope: [String]? = nil,
                                    state: String? = nil,
                                    account: AccountAccess? = nil,
+                                   referral: String? = nil,
                                    meta: [String: String]? = nil,
                                    flowType: OAuthFlowType = .inSafari) throws {
         try self.beginAuthorization(layout: layout,
                                     scope: scope,
                                     state: state,
                                     accountAccess: account,
+                                    referral: referral,
                                     meta: meta,
                                     urlOpener: flowType.opener)
     }
@@ -385,12 +389,14 @@ extension OAuth {
                                    scope: [String]? = nil,
                                    state: String? = nil,
                                    account: AccountAccess? = nil,
+                                   referral: String? = nil,
                                    meta: [String: String]? = nil,
                                    urlOpener: URLOpenerProtocol) throws {
         try self.beginAuthorization(layout: layout,
                                     scope: scope,
                                     state: state,
                                     accountAccess: account,
+                                    referral: referral,
                                     meta: meta,
                                     urlOpener: urlOpener)
     }
